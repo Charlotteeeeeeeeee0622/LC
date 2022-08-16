@@ -1,0 +1,18 @@
+1.输出所有子集的就是没有任何限制条件，直接res.append(path)，subsets 1,2
+2.列出所有组合限制条件就是not nums，permutations 1,2
+3.列出所有等于和为target的子集的限制条件就是
+  (1)combinations 1
+    len(path)==target -> res.append -> return
+  (2)combinations 2
+    target<0 -> return
+    target==0 -> res.append -> return
+  (3)combinations 3
+    target<0,k<0 -> return
+    target==0,k==0 -> res.append -> return
+  (4)combinations 4
+    target
+4.word search: 限制条件有超出搜索范围和不等于地址字母不等于首字母，还有len(word)==0
+  因为word可以重叠搜索，所以要用temp=board[i][j],board[i][j]='#'结束搜索后再 board[i][j]=temp回溯一波
+5.islands number: 限制条件只有超出搜索范围，以及改地址被访问过了
+  岛这一篇区域，一旦被访问过，就不可以再访问，不然得出的结果一定是同一个岛，故grid[i][j]='#'直接标注，不需要用temp
+6.n queens：
