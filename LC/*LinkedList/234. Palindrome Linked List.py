@@ -22,7 +22,7 @@ class Solution:
         while cur:
             cur.next, prev, cur = prev, cur, cur.next
 
-        first = headw
+        first = head
         second = prev
         while second:
             if first.val == second.val:
