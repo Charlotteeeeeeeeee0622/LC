@@ -31,3 +31,31 @@ class Solution:
                 areas.append(dfs(grid, row, col))
         return max(areas) if areas else 0
 
+
+def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+    size = 0
+
+    def dfs(i, j):
+        nonlocal size
+        nonlocal grid
+        for di, dj in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
+            dii = di + i
+            djj = dj + j
+            if 0 <= dii < len(grid) and 0 <= djj < len(grid[0]) and grid[dii][djj] == 1:
+                grid[dii][djj] = 0
+                size += 1
+                dfs(dii, djj)
+
+    max_size = 0
+    for i in range(len(grid)):
+        for j in range(len(grid[0])):
+            if grid[i][j] == 1:
+                grid[i][j] = 0
+                size = 1
+                dfs(i, j)
+                max_size = max(max_size, size)
+    return max_size
+
+# slow and practice explanation
+
+# solid

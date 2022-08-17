@@ -34,4 +34,46 @@ class Solution:
             if dp[i] == max(dp):
                 ans += mn[i]
 
+                def findNumberOfLIS(self, nums: List[int]) -> int:
+                    dp, longest = [[1, 1] for i in range(len(nums))], 1
+                    for i, num in enumerate(nums):
+                        count = 0
+                        for j in range(i):
+                            if nums[j] < num:
+                                dp[i][0] = max(dp[i][0], dp[j][0] + 1)
+                        for j in range(i):
+                            if nums[j] < num and dp[j][0] == dp[i][0] - 1:
+                                count += dp[j][1]
+                        dp[i][1] = max(dp[i][1], count)
+                        longest = max(longest, dp[i][0])
+                    return sum([item[1] for item in dp if item[0] == longest])
+
         return ans
+
+    class Solution:
+        def findNumberOfLIS(self, nums: List[int]) -> int:
+            # time complexity
+            # meetingroom和这一题的另外一种写法，space压缩
+
+            # dp[i]为以nums[i]结尾的严格递增子序列最大长度
+            # count[i]为以nums[i]结尾的最长严格递增子序列的数目
+
+            if not nums:
+                return 0
+
+            dp[0] = 0
+            dp[1] = 1
+
+            for i range(2, len(nums)):
+                for j in range(0, i)
+                    if nums[i] > nums[i - 1]:
+                        dp[i] = dp[i - 1] + 1
+                    else:
+                        dp[i] = dp[i - 1]
+
+            res = 0
+            for i in range(len(nums)):
+                if dp[i] == max(dp):
+                    count += 1
+            return count
+
