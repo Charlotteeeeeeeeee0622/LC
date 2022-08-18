@@ -29,5 +29,7 @@ class Solution:
 #         }
 #     }
 
+if __name__ == '__main__':
+   print(list(reversed(range(1,11))))
 #     return spare < 0 ? -1 : (minIndex + 1) % len;
 # }
