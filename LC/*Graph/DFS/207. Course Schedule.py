@@ -49,3 +49,4 @@ class Solution:
         for i in range(numCourses):
             if not dfs(i, adjacency, flags): return False
         return True
+

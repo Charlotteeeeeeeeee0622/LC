@@ -55,6 +55,14 @@ class LRUCache:
             self.tail.prev.next = cur
             self.tail.prev = cur
 
+            cur = Node(key, value)
+            self.hashmap[key] = cur
+            cur.prev = self.tail.prev
+            cur.next = self.tail
+
+            self.tail.prev.next = cur
+            self.tail.prev = cur
+
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)
 # param_1 = obj.get(key)
