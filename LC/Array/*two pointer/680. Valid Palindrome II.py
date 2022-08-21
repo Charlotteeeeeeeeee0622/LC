@@ -13,3 +13,6 @@ class Solution:
 
     def _isPalindrome(self, s):
         return s == s[::-1]
+
+
+    # delete, even, left hand side and right hand side
