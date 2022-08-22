@@ -1,4 +1,4 @@
-# https://leetcode.cn/problems/fruit-into-baskets/solution/shen-du-jie-xi-zhe-dao-ti-he-by-linzeyin-6crr/
+f# https://leetcode.cn/problems/fruit-into-baskets/solution/shen-du-jie-xi-zhe-dao-ti-he-by-linzeyin-6crr/
 # 没改好版本
 class Solution:
     def totalFruit(self, fruits: List[int]) -> int:

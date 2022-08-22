@@ -5,7 +5,7 @@ class Solution:
 
         diff = nums[-1] - nums[0] + 1  # complete length
         missing = diff - len(nums)  # complete length - real length
-        if k > missing:  # if k is larger than the number of mssing words in sequence
+        if k > missing:  # if k is larger than the number of missing words in sequence
             return nums[-1] + k - missing
 
         left, right = 0, len(nums) - 1
