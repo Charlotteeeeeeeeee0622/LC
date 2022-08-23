@@ -55,7 +55,3 @@ def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
                 dfs(i, j)
                 max_size = max(max_size, size)
     return max_size
-
-# slow and practice explanation
-
-# solid

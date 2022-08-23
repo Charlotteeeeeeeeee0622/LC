@@ -1,49 +1,17 @@
-f# https://leetcode.cn/problems/fruit-into-baskets/solution/shen-du-jie-xi-zhe-dao-ti-he-by-linzeyin-6crr/
-# 没改好版本
 class Solution:
-    def totalFruit(self, fruits: List[int]) -> int:
-        left = 0
-        max_len = -1
-        res = [fruits[left]]
-
-        for right in range(1, len(fruits)):
-            max_len = max(max_len, right - left)
-
-            if fruits[right] not in res and fruits[right] != fruits[right - 1]:
-                res.append(fruits[right])
-
-                while len(res) > 2:
-                    max_len = max(max_len, right - left)
-                    left = right - 1
-                    while fruits[left] == fruits[left - 1]:
-                        left -= 1
-                    res = [fruits[left], fruits[right]]
-
-        return max_len
-
-# 作者amy原版本
-class Solution:
-    def totalFruit(self, fruits: List[int]) -> int:
-        left = 0
-        right = 1
-        max_len = -1
-        res = [fruits[left]]
-
-        while right < len(fruits):
-
-            if fruits[right] not in res and fruits[right] != fruits[right - 1]:
-                res.append(fruits[right])
-
-                while len(res) > 2:
-                    max_len = max(max_len, right - left)
-                    left = right - 1
-                    while fruits[left] == fruits[left - 1]:
-                        left -= 1
-                    res = [fruits[left], fruits[right]]
-            right += 1
-
-        return max(max_len, right - left)
-
+    def totalFruit(self, tree: List[int]) -> int:
+        l=0
+        res=0
+        nums=collections.Counter()
+        for r in range(len(tree)):
+            nums[tree[r]]+=1
+            while len(nums)>2:
+                nums[tree[l]]-=1
+                if not nums[tree[l]]:
+                    nums.pop(tree[l])
+                l+=1
+            res=max(res,r-l+1)
+        return res
 
 # 失败尝试，res不能实现这个函数功能
 # res.remove(fruits[left]),left不能只+=1
