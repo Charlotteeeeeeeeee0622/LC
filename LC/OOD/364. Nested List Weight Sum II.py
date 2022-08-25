@@ -42,15 +42,6 @@
 #        """
 
 class Solution:
-    # def depthSumInverse(self, nl: List[NestedInteger]) -> int:
-    #     count=0
-    #     for c in nl:
-    #         if c.getInteger==None:
-    #             depth+=1
-    #         elif c.getList==None:
-    #             count+=c*depth
-    #     return count
-
     def depthSumInverse(self, nestedList: List[NestedInteger]) -> int:
         unweighted = 0
         weighted = 0
