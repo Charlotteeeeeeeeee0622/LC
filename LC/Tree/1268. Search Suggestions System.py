@@ -1,5 +1,9 @@
-class Solution:
-    def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
+import collections
+from typing import List
+
+if __name__ == '__main__':
+
+    def suggestedProducts(products: List[str], searchWord: str) -> List[List[str]]:
         class TrieNode:
             def __init__(self):
                 self.children = collections.defaultdict(TrieNode)
@@ -22,3 +26,5 @@ class Solution:
             node = node.children[char]
             result.append(node.suggestion)
         return result
+
+    suggestedProducts(products = ["bags","baggage","banner","box","cloths"], searchWord = "bags")
