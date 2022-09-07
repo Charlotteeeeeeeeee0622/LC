@@ -1,14 +1,5 @@
 if __name__ == '__main__':
     def decodeString(s: str) -> str:
-        # for i,c in enumerate(s):
-        #     if c.isnumeric():
-        #         stack.append(c)
-        #     elif c=='[':
-        #         start=i
-        #     elif c==']':
-        #         end=i
-        #         res.append(s[start+1,end])
-
         stack = [];
         curNum = 0;
         curString = ''
