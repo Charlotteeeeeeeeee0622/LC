@@ -1,5 +1,7 @@
 # LC
 
-## Solution for different topic of LeetCode
+## Solution for different topics of LeetCode
 
-### tree linkedlist array...
+### tree linkedlist array dp graph 
+
+### written by Charlotte Wong
